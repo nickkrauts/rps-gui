@@ -67,6 +67,31 @@ function playRound(computerChoice,playerChoice) {
     else {
         roundResult = 'You tied!';
     }
-    return roundResult
+    console.log(roundResult)
+    return roundResult;
 }
-console.log(playRound())
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    //I tried to make totalRounds = playerScore + computerScore to limit redundancy   
+    // but it would not add the sum between rounds
+    let totalRounds = 0;
+    //play 5 rounds of the game
+    while (totalRounds < 5 ){
+    let scoreKeeper = playRound();
+    if (scoreKeeper == 'You tied!'){
+        totalRounds++
+    }
+    else if (true == ((scoreKeeper == 'You win! Rock beats scissors!')
+                || (scoreKeeper == 'You win! Scissors beats paper!')
+                || (scoreKeeper == 'You win! Paper beats rock!'))) {
+                    playerScore++;
+                    totalRounds++;
+                }
+    else {computerScore++;
+            totalRounds++}}
+
+    return [playerScore,computerScore,(totalRounds - (playerScore + computerScore))];
+}
+console.log(game());    
