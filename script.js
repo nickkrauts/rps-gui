@@ -35,8 +35,8 @@ function playerSelection() {
 
 //play one round of the game
 function playRound(computerChoice,playerChoice) {
-    computerChoice = computerPlay();
     playerChoice = playerSelection();
+    computerChoice = computerPlay();
 
 // rock > scissors, scissors > paper, paper > rock
 // begin with options for user winning
@@ -90,8 +90,11 @@ function game() {
                     totalRounds++;
                 }
     else {computerScore++;
-            totalRounds++}}
-
-    return [playerScore,computerScore,(totalRounds - (playerScore + computerScore))];
+            totalRounds++}
+     console.log(['Score: You: ' + playerScore, 'Computer ' + computerScore, 'ties: ' + (totalRounds - (playerScore + computerScore))])   }
+    
+    return [' You won ' + playerScore,
+            ' The computer won ' + computerScore,
+             'and you tied ' + (totalRounds - (playerScore + computerScore))];
 }
 console.log(game());    
