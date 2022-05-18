@@ -1,5 +1,10 @@
 //for TOP internal note: computer/playerChoice == playerSelection
 
+//take input from user on button click
+function userClick() {
+    
+}
+
 //randomly generate computerPlay using a random integer 0-2
 function computerPlay() {
     let randInt = Math.floor(Math.random() * 3);
